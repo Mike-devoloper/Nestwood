@@ -1,8 +1,32 @@
 {
   "$schema": "https://json.schemastore.org/nest-cli",
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src",
+  "sourceRoot": "apps/nestwood-backend/src",
   "compilerOptions": {
-    "deleteOutDir": true
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/nestwood-backend/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/nestwood-backend",
+  "projects": {
+    "nestwood-backend": {
+      "type": "application",
+      "root": "apps/nestwood-backend",
+      "entryFile": "main",
+      "sourceRoot": "apps/nestwood-backend/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/nestwood-backend/tsconfig.app.json"
+      }
+    },
+    "nestwood-batch": {
+      "type": "application",
+      "root": "apps/nestwood-batch",
+      "entryFile": "main",
+      "sourceRoot": "apps/nestwood-batch/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/nestwood-batch/tsconfig.app.json"
+      }
+    }
   }
 }
