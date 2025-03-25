@@ -1,5 +1,6 @@
 import { Schema } from 'mongoose';
-import { BoardArticleCategory, BoardArticleStatus } from '../libs/enums/BoardArticleCategory.enum';
+import { BoardArticleCategory, BoardArticleStatus } from '../libs/enums/boardArticleCategory.enum';
+
 
 const BoardArticleSchema = new Schema(
 	{
