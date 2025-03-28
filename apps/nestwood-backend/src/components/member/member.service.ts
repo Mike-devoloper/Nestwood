@@ -35,7 +35,6 @@ export class MemberService {
        } else if (response.memberStatus === MemberStatus.BLOCK) {
         throw new InternalServerErrorException(Message.BLOCKED_USER)
        }
-       console.log("memberPAssword +> ", response.memberPassword)
        const isMatch = memberPassword === response.memberPassword;
        if(!isMatch) throw new InternalServerErrorException(Message.WRONG_PASSWORD)
 
