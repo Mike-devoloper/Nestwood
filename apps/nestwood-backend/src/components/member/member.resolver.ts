@@ -1,7 +1,7 @@
 
 import { UsePipes, ValidationPipe } from '@nestjs/common';
 import { Mutation, Resolver, Query, Args } from '@nestjs/graphql';
-import { Member } from '../../libs/dto/Member';
+import { Member } from '../../libs/dto/member';
 import { LoginInput, MemberInput } from '../../libs/dto/member.input';
 import { MemberService } from './member.service';
 

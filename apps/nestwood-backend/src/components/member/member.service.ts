@@ -1,7 +1,7 @@
 import { BadRequestException, Injectable, InternalServerErrorException } from '@nestjs/common';
 import { InjectModel} from '@nestjs/mongoose';
 import {Model} from "mongoose"
-import { Member } from '../../libs/dto/Member';
+import { Member } from '../../libs/dto/member';
 import { LoginInput, MemberInput } from '../../libs/dto/member.input';
 import { Message } from '../../libs/enums/common.enum';
 import { MemberStatus } from '../../libs/enums/member.enum';
@@ -22,7 +22,7 @@ export class MemberService {
 
         } catch (err){
             console.log("Error SignUp service.model ", err)
-            throw new BadRequestException(err)
+            throw new BadRequestException(Message.USED_MEMBER_NICK_OR_PHONE)
         }
     }
 
