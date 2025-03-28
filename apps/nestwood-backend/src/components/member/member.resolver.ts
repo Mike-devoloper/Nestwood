@@ -11,18 +11,16 @@ export class MemberResolver {
 
 
     @Mutation(() => Member)
-    @UsePipes(ValidationPipe)
     public async signup(@Args("input") input: MemberInput): Promise<Member> {
         console.log("Mutation signup");
         console.log("Sign up mutation", input)
         return await this.memberService.signup(input);
     }
 
-    @Mutation(() => String)
-    @UsePipes(ValidationPipe)
-    public async login(@Args("input") input: LoginInput): Promise<string> {
+    @Mutation(() => Member)
+    public async login(@Args("input") input: LoginInput): Promise<Member> {
         console.log("Mutaution login");
-        return  await this.memberService.login();
+        return  await this.memberService.login(input);
     }
 
     @Mutation(() => String)
