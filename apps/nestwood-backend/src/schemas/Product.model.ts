@@ -66,11 +66,6 @@ const ProductSchema = new Schema(
 			type: String,
 		},
 
-		productRent: {
-			type: Boolean,
-			default: false,
-		},
-
 		memberId: {
 			type: Schema.Types.ObjectId,
 			required: true,

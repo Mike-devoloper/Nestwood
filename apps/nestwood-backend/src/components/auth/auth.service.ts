@@ -12,3 +12,4 @@ export class AuthService {
         return await brcrypt.compare(password, hashedPassword);
     }
 }
+
